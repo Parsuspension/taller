@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par Suspensión | Especialistas en Chasis y Rendimiento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --card-bg: #1a1a1a;
+            --accent-red: #e60000;
+            --text-light: #f5f5f5;
+            --text-gray: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 15px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo-img {
+            width: 180px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 10px rgba(230, 0, 0, 0.3));
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+        }
+
+        p.subtitle {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-top: 5px;
+            margin-bottom: 25px;
+        }
+
+        .cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25d366;
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .cta-btn:active {
+            transform: scale(0.98);
+        }
+
+        .section-title {
+            text-align: left;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            border-left: 4px solid var(--accent-red);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 15px 10px;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .info-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+            border: 1px solid #2a2a2a;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item i {
+            color: var(--accent-red);
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        footer {
+            color: #555;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo -->
+        <img src="logo.jpg" alt="Par Suspensión" class="logo-img">
+        
+        <h1>PAR SUSPENSIÓN</h1>
+        <p class="subtitle">Especialistas en suspensión, reformas y rendimiento</p>
+
+        <!-- Botón Directo a WhatsApp -->
+        <a href="https://wa.me/5491166183344?text=Hola!%20Quiero%20consultar%20por%20un%20presupuesto%20para%20mi%20auto" class="cta-btn" target="_blank">
+            <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i> Cotizar por WhatsApp
+        </a>
+
+        <!-- Servicios -->
+        <div class="section-title">Nuestros Servicios</div>
+        <div class="services-grid">
+            <div class="service-card">Reparación de Amortiguadores</div>
+            <div class="service-card">Suspensión 1/4 de Milla</div>
+            <div class="service-card">Reformas a Medida</div>
+            <div class="service-card">Tren Delantero</div>
+        </div>
+
+        <!-- Galería de Trabajos -->
+        <div class="section-title">Trabajos Realizados</div>
+        <div class="gallery">
+            <img src="foto1.jpg" alt="Trabajo 1">
+            <img src="foto2.jpg" alt="Trabajo 2">
+            <img src="foto3.jpg" alt="Trabajo 3">
+            <img src="foto4.jpg" alt="Trabajo 4">
+        </div>
+
+        <!-- Información de Contacto y Ubicación -->
+        <div class="section-title">Ubicación y Contacto</div>
+        <div class="info-card">
+            <a href="https://maps.app.goo.gl/YourMapLink" target="_blank" class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Av. Albarellos 3056, CABA</span>
+            </a>
+            <a href="https://instagram.com/parsuspension" target="_blank" class="info-item">
+                <i class="fab fa-instagram"></i>
+                <span>@parsuspension</span>
+            </a>
+            <div class="info-item">
+                <i class="fas fa-wrench"></i>
+                <span>Atención personalizada con turno previo</span>
+            </div>
+        </div>
+
+        <footer>
+            © Par Suspensión - Todos los derechos reservados
+        </footer>
+    </div>
+
+</body>
+</html>
