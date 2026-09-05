@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Par Suspensión | Especialistas en Chasis y Rendimiento</title>
+    <title>Par Suspensión | Taller Especializado</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0d0d0d;
-            --card-bg: #1a1a1a;
+            --bg-color: #0b0b0b;
+            --card-bg: #161616;
+            --border-color: #262626;
             --accent-red: #e60000;
             --text-light: #f5f5f5;
-            --text-gray: #aaaaaa;
+            --text-gray: #a0a0a0;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
@@ -27,106 +28,158 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px 15px;
+            padding: 20px 15px 80px 15px;
         }
 
         .container {
             max-width: 500px;
             width: 100%;
+        }
+
+        /* HEADER & LOGO HORIZONTAL */
+        header {
             text-align: center;
-        }
-
-        .logo-img {
-            width: 180px;
-            height: auto;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 0 10px rgba(230, 0, 0, 0.3));
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-light);
-        }
-
-        p.subtitle {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            margin-top: 5px;
             margin-bottom: 25px;
         }
 
-        .cta-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: #25d366;
-            color: #fff;
-            text-decoration: none;
-            padding: 16px 20px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            transition: transform 0.2s;
+        .logo-img {
+            width: 90%;
+            max-width: 420px;
+            height: auto;
+            object-fit: contain;
+            margin: 10px auto;
+            filter: drop-shadow(0 0 12px rgba(230, 0, 0, 0.25));
         }
 
-        .cta-btn:active {
-            transform: scale(0.98);
+        .subtitle {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-top: 5px;
         }
 
+        /* TITULOS DE SECCION */
         .section-title {
-            text-align: left;
             font-size: 1.1rem;
             text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
             border-left: 4px solid var(--accent-red);
             padding-left: 10px;
-            margin-bottom: 15px;
+            margin: 30px 0 15px 0;
             color: var(--text-light);
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 30px;
+        /* SERVICIOS UNO ABAJO DEL OTRO */
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .service-card {
             background-color: var(--card-bg);
-            padding: 15px 10px;
-            border-radius: 8px;
-            border: 1px solid #2a2a2a;
-            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .service-card i {
+            color: var(--accent-red);
+            font-size: 1.5rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .service-info h3 {
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+
+        .service-info p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* CARRUSEL DESLIZABLE (SWIPER HORIZONTAL) */
+        .carousel-container {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 10px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb {
+            background: var(--accent-red);
+            border-radius: 4px;
+        }
+
+        .carousel-item {
+            flex: 0 0 80%;
+            scroll-snap-align: start;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-caption {
+            padding: 10px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            text-align: center;
+        }
+
+        /* POR QUE ELEGIRNOS */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+
+        .feature-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 15px 8px;
+            border-radius: 10px;
+        }
+
+        .feature-box i {
+            color: var(--accent-red);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-box span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-light);
             font-weight: 600;
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid #333;
-        }
-
+        /* UBICACION Y CONTACTO */
         .info-card {
             background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 20px;
-            text-align: left;
-            margin-bottom: 30px;
-            border: 1px solid #2a2a2a;
+            margin-bottom: 25px;
         }
 
         .info-item {
@@ -150,46 +203,135 @@
             text-align: center;
         }
 
+        /* BOTONES DE WHATSAPP */
+        .cta-btn-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25d366;
+            color: #fff;
+            text-decoration: none;
+            padding: 18px 20px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            margin-top: 20px;
+        }
+
+        /* BOTON FLOTANTE */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            z-index: 1000;
+            text-decoration: none;
+        }
+
         footer {
+            text-align: center;
             color: #555;
             font-size: 0.8rem;
-            margin-top: 10px;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Logo -->
-        <img src="logo.jpg" alt="Par Suspensión" class="logo-img">
         
-        <h1>PAR SUSPENSIÓN</h1>
-        <p class="subtitle">Especialistas en suspensión, reformas y rendimiento</p>
+        <!-- HEADER Y LOGO -->
+        <header>
+            <img src="logo.jpg" alt="Par Suspensión Logo" class="logo-img">
+            <p class="subtitle">Especialistas en Suspensión, Chasis y Alto Rendimiento</p>
+        </header>
 
-        <!-- Botón Directo a WhatsApp -->
-        <a href="https://wa.me/5491166183344?text=Hola!%20Quiero%20consultar%20por%20un%20presupuesto%20para%20mi%20auto" class="cta-btn" target="_blank">
-            <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i> Cotizar por WhatsApp
-        </a>
+        <!-- BENEFICIOS CLAVE -->
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fas fa-check-circle"></i>
+                <span>Trabajos Garantizados</span>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-tools"></i>
+                <span>Atención Personalizada</span>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Asesoramiento 1/4 Milla</span>
+            </div>
+        </div>
 
-        <!-- Servicios -->
+        <!-- SERVICIOS (UNO ABAJO DEL OTRO) -->
         <div class="section-title">Nuestros Servicios</div>
-        <div class="services-grid">
-            <div class="service-card">Reparación de Amortiguadores</div>
-            <div class="service-card">Suspensión 1/4 de Milla</div>
-            <div class="service-card">Reformas a Medida</div>
-            <div class="service-card">Tren Delantero</div>
+        <div class="services-list">
+            <div class="service-card">
+                <i class="fas fa-wrench"></i>
+                <div class="service-info">
+                    <h3>Reparación de Amortiguadores</h3>
+                    <p>Service completo, armado y presurizado para un andar óptimo.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-flag-checkered"></i>
+                <div class="service-info">
+                    <h3>Suspensión para 1/4 de Milla</h3>
+                    <p>Desarrollo y puesta a punto específica para tracción en pista.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-cogs"></i>
+                <div class="service-info">
+                    <h3>Reformas a Medida</h3>
+                    <p>Modificaciones personalizadas según la altura y uso de tu vehículo.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-car-side"></i>
+                <div class="service-info">
+                    <h3>Tren Delantero</h3>
+                    <p>Revisión y cambio de bujes, cazoletas, rotulas y extremos.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Galería de Trabajos -->
-        <div class="section-title">Trabajos Realizados</div>
-        <div class="gallery">
-            <img src="foto1.jpg" alt="Trabajo 1">
-            <img src="foto2.jpg" alt="Trabajo 2">
-            <img src="foto3.jpg" alt="Trabajo 3">
-            <img src="foto4.jpg" alt="Trabajo 4">
+        <!-- TRABAJOS REALIZADOS (CARRUSEL DESLIZABLE) -->
+        <div class="section-title">Trabajos Realizados  desliza 👉</div>
+        <div class="carousel-container">
+            <div class="carousel-item">
+                <img src="foto1.jpg" alt="Trabajo Par Suspension">
+                <div class="carousel-caption">Desarrollo a medida</div>
+            </div>
+            <div class="carousel-item">
+                <img src="foto2.jpg" alt="Trabajo Par Suspension">
+                <div class="carousel-caption">Puesta a punto 1/4 de Milla</div>
+            </div>
+            <div class="carousel-item">
+                <img src="foto3.jpg" alt="Trabajo Par Suspension">
+                <div class="carousel-caption">Service de Amortiguadores</div>
+            </div>
+            <div class="carousel-item">
+                <img src="foto4.jpg" alt="Trabajo Par Suspension">
+                <div class="carousel-caption">Mantenimiento de Tren Delantero</div>
+            </div>
         </div>
 
-        <!-- Información de Contacto y Ubicación -->
+        <!-- UBICACION Y CONTACTO -->
         <div class="section-title">Ubicación y Contacto</div>
         <div class="info-card">
             <a href="https://maps.app.goo.gl/YourMapLink" target="_blank" class="info-item">
@@ -201,13 +343,26 @@
                 <span>@parsuspension</span>
             </a>
             <div class="info-item">
-                <i class="fas fa-wrench"></i>
+                <i class="fas fa-clock"></i>
+                <span>Consultas y turnos previos por WhatsApp</span>
+            </div>
         </div>
+
+        <!-- BOTÓN FINAL DE COTIZACIÓN -->
+        <a href="https://wa.me/5491166183344?text=Hola!%20Quiero%20consultar%20por%20un%20presupuesto%20de%20suspensión%20para%20mi%20auto" class="cta-btn-main" target="_blank">
+            <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Cotizar por WhatsApp
+        </a>
 
         <footer>
             © Par Suspensión - Todos los derechos reservados
         </footer>
+
     </div>
+
+    <!-- BOTON FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/5491166183344?text=Hola!%20Quiero%20consultar%20por%20un%20presupuesto" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
